@@ -1,0 +1,30 @@
+## Build results
+bin/
+obj/
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Visual Studio Code
+.vscode/
+
+## JetBrains IDEs
+.idea/
+
+## OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+## Azure Functions
+local.settings.json
+
+## Local configuration
+appsettings.local.json
