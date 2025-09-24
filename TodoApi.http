@@ -1,0 +1,74 @@
+@TodoApi_HostAddress = http://localhost:5218
+@access_token = YOUR_JWT_TOKEN_HERE
+
+### Health check (no authentication required)
+GET {{TodoApi_HostAddress}}/health
+Accept: application/json
+
+###
+
+### Info endpoint - Check configuration (development only)
+GET {{TodoApi_HostAddress}}/info
+Accept: application/json
+
+###
+
+### Get all todos
+GET {{TodoApi_HostAddress}}/api/todos
+Accept: application/json
+Authorization: Bearer {{access_token}}
+
+###
+
+### Create a new todo
+POST {{TodoApi_HostAddress}}/api/todos
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "title": "Testaa Todo API",
+  "description": "Testaa että Todo API toimii Azure SQL tietokannan kanssa",
+  "isCompleted": false
+}
+
+###
+
+### Get completed todos
+GET {{TodoApi_HostAddress}}/api/todos/completed
+Accept: application/json
+Authorization: Bearer {{access_token}}
+
+###
+
+### Get pending todos
+GET {{TodoApi_HostAddress}}/api/todos/pending
+Accept: application/json
+Authorization: Bearer {{access_token}}
+
+###
+
+### Update todo (replace {id} with actual todo ID)
+PUT {{TodoApi_HostAddress}}/api/todos/1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "id": 1,
+  "title": "Päivitetty Todo",
+  "description": "Todo on nyt päivitetty",
+  "isCompleted": true
+}
+
+###
+
+### Delete todo (replace {id} with actual todo ID)
+DELETE {{TodoApi_HostAddress}}/api/todos/1
+Authorization: Bearer {{access_token}}
+
+###
+
+### WeatherForecast (for testing basic API functionality)
+GET {{TodoApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
